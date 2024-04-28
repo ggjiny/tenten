@@ -20,7 +20,7 @@ interface UserApplyData {
 const getUserApply = async (
   userId: string,
   offset: number,
-  token: string,
+  token: string | undefined,
   limit: number = 5,
 ): Promise<UserApplyData> => {
   const res = await fetch(
