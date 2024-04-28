@@ -19,7 +19,7 @@ interface ApplyTableProps {
   noticeId?: string;
   shopId?: string;
   userId?: string;
-  userType: string;
+  userType: string | undefined;
   token?: string;
 }
 
