@@ -18,7 +18,7 @@ interface UserApplyData {
 }
 
 const getUserApply = async (
-  userId: string,
+  userId: string | undefined,
   offset: number,
   token: string | undefined,
   limit: number = 5,

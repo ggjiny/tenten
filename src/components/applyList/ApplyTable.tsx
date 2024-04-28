@@ -19,11 +19,15 @@ interface ApplyTableProps {
   noticeId?: string;
   shopId?: string;
   userId?: string;
-  userType: string | undefined;
+  userType: string;
   token?: string;
 }
 
-const titleCol = {
+interface TitleCol {
+  [key: string]: string[];
+}
+
+const titleCol: TitleCol = {
   employee: ['가게', '일자', '시급', '상태'],
   employer: ['신청자', '소개', '전화번호', '상태'],
 };
@@ -31,7 +35,7 @@ const titleCol = {
 function ApplyTable(props: ApplyTableProps) {
   const { userType, token } = props;
 
-  const [applies, setApplies] = useState([] as unknown);
+  const [applies, setApplies] = useState<object[]>([]);
   const [total, setTotal] = useState<number>(0);
 
   const [open, setOpen] = useState(false);

@@ -6,8 +6,8 @@ interface ShopApplyData {
 }
 
 const getShopApply = async (
-  shopId: string,
-  noticeId: string,
+  shopId: string | undefined,
+  noticeId: string | undefined,
   offset: number,
   token?: string,
 ): Promise<ShopApplyData> => {
