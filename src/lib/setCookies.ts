@@ -40,9 +40,7 @@ function setCookies({ token = '', user, shopId = '' }: CookieData) {
       name: 'userType',
       value: user.type,
       httpOnly: true,
-      domain: '/',
-      sameSite: 'none',
-      secure: true,
+      path: '/',
       expires: Date.now() + expireTime,
     });
   }

@@ -29,13 +29,12 @@ const getCardData = async (
   const sortQuery = sort ? `&sort=${sort}` : '';
 
   const keywordQuery = keyword ? `&keyword=${keyword}` : '';
-
+  console.log('carddata', filterItems);
   const res = await fetch(
     `${BASE_URL}/notices?offset=${offset}&limit=${limit}${startsAtGteQuery}${hourlyPayGteQuery}${addressListURLQuery}${sortQuery}${keywordQuery}`,
     { cache: 'no-store' },
   );
-  console.log('carddata', filterItems);
-  console.log('carddata', res);
+
   if (!res.ok) {
     throw new Error('공고를 조회할 수 없습니다. (getCardData)');
   }
