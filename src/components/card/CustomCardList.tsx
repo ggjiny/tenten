@@ -55,6 +55,7 @@ async function fetchItems(filter: Filter): Promise<CardItems[]> {
 
 export default async function CustomCardList() {
   const userId = getCookie('u_id');
+  console.log('customcardlist', userId);
   const { address } = (await getProfileData(userId)) || '';
 
   if (!address) {
@@ -68,7 +69,7 @@ export default async function CustomCardList() {
   };
 
   let newItems = await fetchItems(initialFilter);
-
+  console.log('customcardlist', newItems);
   if (newItems.length < 8) {
     const nearAddress = NEAR_ADDRESS_LIST[address];
 
