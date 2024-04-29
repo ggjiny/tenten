@@ -8,7 +8,6 @@ import styles from './page.module.scss';
 export default function Home() {
   const { userType } = getCookies();
 
-  console.log('page', userType);
   return (
     <div>
       {userType === 'employee' && <CustomCardList />}
