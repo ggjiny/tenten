@@ -15,6 +15,10 @@ export default function LogoutButton() {
     setIsShow(modalState);
   };
 
+  const handleOpenModal = () => {
+    setIsShow(true);
+  };
+
   const handleLogout = async () => {
     await deleteCookie();
     router.replace('/');
@@ -23,7 +27,7 @@ export default function LogoutButton() {
 
   return (
     <>
-      <button onClick={handleShowModal}>로그아웃</button>
+      <button onClick={handleOpenModal}>로그아웃</button>
       {isShow && (
         <ModalPortal>
           <Modal
@@ -34,7 +38,7 @@ export default function LogoutButton() {
             buttonText={['예', '아니오']}
             buttonWidthPercent='25%'
             handleModal={handleShowModal}
-            buttonColorChange={true}
+            buttonColorChange
             handleButton={[
               handleLogout,
               e => {

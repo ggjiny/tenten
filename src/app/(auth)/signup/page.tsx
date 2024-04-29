@@ -5,7 +5,7 @@ import TypeSelector from '@/src/components/TypeSelector';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import Logo from '@/public/icons/logo.svg';
+import Logo from '@/public/icons/logo.png';
 import Button from '@/src/components/common/Button';
 import { useForm } from 'react-hook-form';
 import { EMAIL_REGEX, PASSWORD_REGEX } from '@/src/constants/regEx';
@@ -68,14 +68,14 @@ export default function SignUp() {
   };
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         <Link href='/' scroll={false}>
           <Image
             src={Logo}
             alt='홈페이지 로고'
-            width={248}
-            height={45}
+            width={250}
+            height={60}
             priority
           />
         </Link>
@@ -134,6 +134,6 @@ export default function SignUp() {
       {showToast && toastMessage && (
         <Toast message={toastMessage} isWarning={isWarning} />
       )}
-    </>
+    </div>
   );
 }
